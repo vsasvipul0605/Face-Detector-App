@@ -7,7 +7,7 @@ trained_face_data = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_fro
 img = cv2.imread('pari1.jpg')
 
 # capture video from webcam
-webcam = cv2.VideoCapture('video1.mp4')
+webcam = cv2.VideoCapture(0)
 
 # iterate always over frames
 while True:
@@ -24,7 +24,7 @@ while True:
     for (x, y, w, h) in face_coordinates:
         cv2.rectangle(frame, (x,y),(x+w,y+h), (randrange(128,256),randrange(128,256),randrange(128,256)), 5)
 
-    cv2.imshow('Clever Programmer Face Detector',frame)
+    cv2.imshow('Face Detector App',frame)
     key = cv2.waitKey(1)
 
     # stop when q pressed
@@ -46,7 +46,7 @@ print(face_coordinates)
 for (x, y, w, h) in face_coordinates:
     cv2.rectangle(img, (x,y),(x+w,y+h), (randrange(128,256),randrange(128,256),randrange(128,256)), 5)
 
-cv2.imshow('Clever Programmer Face Detector',img)
+cv2.imshow('Face Detector App',img)
 cv2.waitKey()
 print("Hey Hi!!")
 """
