@@ -28,7 +28,7 @@ while True:
     key = cv2.waitKey(1)
 
     # stop when q pressed
-    if key == 81 or key == 113:
+    if key == ord('m'): # ord() return the unicode of passing charater.
         break
 
 # stop webcam 
